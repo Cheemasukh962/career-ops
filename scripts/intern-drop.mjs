@@ -10,6 +10,8 @@
  * Output:
  *   intern-drop/state/latest.json
  *   intern-drop/state/slack.md
+ *   intern-drop/state/slack-intern-{swe,consulting-it,hardware,product,other}.md
+ * No per-channel job cap. Slack bots must post every line; split messages if Slack length-limits.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -28,10 +30,9 @@ const ATS_LOCK = path.join(STATE, "ats.lock");
 const TICK_LOCK = path.join(STATE, "tick.lock");
 
 const FULL = process.argv.includes("--full");
-const CAP = 25;
 
 const internRe =
-  /\bintern\b|internship|co-?op\b|early career|undergraduate|university (grad|graduate)|new grad|campus|apprentice|fall 2026|summer 2027|summer 2026|student|summer scholar|summer analyst|summer associate/i;
+  /\bintern\b|internship|co-?op\b|early career|undergraduate|university (grad|graduate)|new grad|campus|apprentice|fall 2026|winter 2026|winter 2027|spring 2027|summer 2027|summer 2026|student|summer scholar|summer analyst|summer associate|fall intern|winter intern|spring intern/i;
 const junkTitle =
   /\b(mba intern|phd|postdoc|nurse|physician|attorney|paralegal|recruiter|talent acquisition|hr intern|legal intern|sales intern|graphic design intern|social media intern|accounting intern|audit intern|tax intern|real estate intern|municipal|transportation intern|survey intern|land development|public works|site development|sprinkler|hvac|civil intern|roadway|highway design|fleet coordinator|financial aid|corporate affairs|copyright extern|assurance|wealth management|finance intern)\b/i;
 const hwRe =
@@ -243,23 +244,58 @@ function readOffersFile(file) {
   }
 }
 
-function slackBody(newJobs) {
+function termLabel(title) {
+  const t = String(title || "");
+  if (/fall\s*2026|autumn\s*2026/i.test(t)) return "Fall 2026";
+  if (/winter\s*2026/i.test(t)) return "Winter 2026";
+  if (/winter\s*2027/i.test(t)) return "Winter 2027";
+  if (/spring\s*2027/i.test(t)) return "Spring 2027";
+  if (/summer\s*2026/i.test(t)) return "Summer 2026";
+  if (/summer\s*2027/i.test(t)) return "Summer 2027";
+  if (/\bfall intern/i.test(t)) return "Fall 2026";
+  if (/\bwinter intern/i.test(t)) return "Winter 2027";
+  if (/\bspring intern/i.test(t)) return "Spring 2027";
+  if (/\bsummer intern/i.test(t)) return "Summer 2027";
+  return "";
+}
+
+function slackLine(j) {
+  const term = termLabel(j.title);
+  const loc = j.location || "n/a";
+  const extra = term ? ` — ${term}` : "";
+  return `- ${j.company} — ${j.title} — ${loc}${extra}\n  ${j.url}`;
+}
+
+function jobsByChannel(newJobs) {
   const by = {};
-  for (const j of newJobs) {
-    (by[j.channel] ||= []).push(j);
-  }
+  for (const ch of Object.values(CHANNEL)) by[ch] = [];
+  for (const j of newJobs) (by[j.channel] ||= []).push(j);
+  return by;
+}
+
+function slackBody(newJobs) {
+  const by = jobsByChannel(newJobs);
   const parts = [];
   for (const channel of Object.values(CHANNEL)) {
     const rows = by[channel] || [];
     if (!rows.length) continue;
-    const shown = rows.slice(0, CAP);
-    parts.push(`# ${channel} (${rows.length}${rows.length > CAP ? `, showing ${CAP}` : ""})`);
-    for (const j of shown) {
-      parts.push(`- ${j.company} — ${j.title} — ${j.location || "n/a"}\n  ${j.url}`);
-    }
+    parts.push(`# ${channel} (${rows.length})`);
+    for (const j of rows) parts.push(slackLine(j));
     parts.push("");
   }
   return parts.join("\n").trim();
+}
+
+function writeChannelSlacks(newJobs) {
+  const by = jobsByChannel(newJobs);
+  const files = {};
+  for (const channel of Object.values(CHANNEL)) {
+    const rows = by[channel] || [];
+    const file = path.join(STATE, `slack-${channel}.md`);
+    fs.writeFileSync(file, rows.length ? `${rows.map(slackLine).join("\n")}\n` : "");
+    files[channel] = { file, count: rows.length };
+  }
+  return files;
 }
 
 async function main() {
@@ -335,7 +371,7 @@ async function main() {
     for (const j of kept) seen.add(j.key);
     saveSeen(seen);
 
-    const floodGuard = !seeding && fresh.length > 80;
+    const floodGuard = !seeding && fresh.length > 500;
     const toSlack = floodGuard ? [] : fresh;
 
     const latest = {
@@ -349,6 +385,12 @@ async function main() {
       suppressed: floodGuard ? fresh.length : 0,
       watchlist: CONSULTING_WATCHLIST,
       newJobs: toSlack,
+      channelFiles: Object.fromEntries(
+        Object.values(CHANNEL).map((ch) => [
+          ch,
+          path.join(STATE, `slack-${ch}.md`),
+        ]),
+      ),
     };
     fs.writeFileSync(LATEST_PATH, JSON.stringify(latest, null, 2));
     const md = seeding
@@ -357,6 +399,7 @@ async function main() {
         ? `Ingested ${fresh.length} listings as a baseline (first ATS dump). Not posted to Slack. Next tick posts only NEW roles.`
         : slackBody(toSlack);
     fs.writeFileSync(SLACK_PATH, md ? `${md}\n` : "");
+    const channelFiles = writeChannelSlacks(seeding || floodGuard ? [] : toSlack);
 
     console.log(JSON.stringify({
       seeding,
@@ -368,6 +411,7 @@ async function main() {
       ),
       slack: SLACK_PATH,
       latest: LATEST_PATH,
+      channelFiles,
       watchlist: CONSULTING_WATCHLIST.length,
     }));
   } finally {
