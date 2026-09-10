@@ -23,6 +23,7 @@
  * Usage:
  *   node scan.mjs                  # scan all enabled companies
  *   node scan.mjs --dry-run        # preview without writing files
+ *   node scan.mjs --dry-run --json-out intern-drop/state/scan.json
  *   node scan.mjs --company Cohere # scan a single company
  *   node scan.mjs --verify         # Playwright-check each new URL; drop expired postings
  *   node scan.mjs --verify --headed-fallback  # retry anti-bot-blocked URLs in a headed browser (needs a display)
@@ -1854,6 +1855,12 @@ function guardStatusFor(code) {
 async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes('--dry-run');
+  const jsonOutFlag = args.indexOf('--json-out');
+  const jsonOut = jsonOutFlag !== -1 ? args[jsonOutFlag + 1] : null;
+  if (jsonOutFlag !== -1 && (!jsonOut || jsonOut.startsWith('--'))) {
+    console.error('Error: --json-out expects a file path');
+    process.exit(1);
+  }
   const verify = args.includes('--verify');
   // Opt-in: on an anti-bot challenge (e.g. pracuj.pl Cloudflare wall), retry the
   // URL in a headed browser. Off by default — headed Chromium needs a display, so
@@ -2454,6 +2461,24 @@ async function main() {
       filteredPostedDate: totalFilteredPostedDate,
       filteredCountryEligibility: totalFilteredCountryEligibility,
     });
+  }
+
+  if (jsonOut) {
+    mkdirSync(path.dirname(path.resolve(jsonOut)), { recursive: true });
+    writeFileSync(jsonOut, JSON.stringify({
+      date,
+      dryRun,
+      newOffers: verifiedOffers.length,
+      offers: verifiedOffers.map((o) => ({
+        company: o.company,
+        title: o.title,
+        url: o.url,
+        location: o.location || null,
+        postedAt: o.postedAt || null,
+        source: o.source || o.note || null,
+      })),
+    }));
+    console.error(`JSON written to ${jsonOut}`);
   }
 
   console.log(`\n→ Run /career-ops pipeline to evaluate new offers.`);

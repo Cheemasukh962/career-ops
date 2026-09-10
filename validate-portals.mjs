@@ -131,6 +131,15 @@ export async function validatePortalsConfig(config, { providerIds = new Set() } 
       validateKeywordList(config.title_filter.positive, 'title_filter.positive', errors);
       validateKeywordList(config.title_filter.negative, 'title_filter.negative', errors);
       validateKeywordList(config.title_filter.seniority_boost, 'title_filter.seniority_boost', errors);
+      if (config.title_filter.all_of !== undefined) {
+        if (!Array.isArray(config.title_filter.all_of)) {
+          add(errors, 'title_filter.all_of', 'title_filter.all_of must be an array of keyword lists');
+        } else {
+          config.title_filter.all_of.forEach((group, i) => {
+            validateKeywordList(group, `title_filter.all_of[${i}]`, errors);
+          });
+        }
+      }
     }
   }
 
