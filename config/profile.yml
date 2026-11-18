@@ -1,0 +1,50 @@
+# Facts below come from Sukhman Cheema's four source resumes (resumes/*.tex) and cv.md.
+# Compensation is unset. Do not invent a target.
+
+candidate:
+  full_name: "Sukhman Cheema"
+  email: "cheemasukh966@gmail.com"
+  phone: "(916) 896-9399"
+  location: "Davis, CA 95616"
+  linkedin: "linkedin.com/in/cheema-s"
+  github: "github.com/Cheemasukh962"
+  photo: ""
+
+target_roles:
+  primary:
+    - "Software Engineering Intern"
+    - "Technical Product Management Intern"
+    - "Embedded Software Engineering Intern"
+    - "Hardware / Electrical Engineering Intern"
+  archetypes:
+    - name: "Software Engineering Intern"
+      level: "Intern"
+      fit: "primary"
+    - name: "Technical Product Intern"
+      level: "Intern"
+      fit: "primary"
+    - name: "Embedded / Automation Intern"
+      level: "Intern"
+      fit: "primary"
+    - name: "Hardware Engineering Intern"
+      level: "Intern"
+      fit: "secondary"
+
+narrative:
+  headline: "UC Davis ECE student (expected June 2028) with software, product, and embedded project work"
+  exit_story: ""
+  superpowers: []
+  proof_points: []
+
+location:
+  country: "United States"
+  city: "Davis"
+  timezone: "America/Los_Angeles"
+  visa_status: "U.S. Citizen"
+  authorized_in: ["United States"]
+  needs_sponsorship: false
+
+language:
+  output: en
+
+spend_tier: standard
