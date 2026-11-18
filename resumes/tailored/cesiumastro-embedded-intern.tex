@@ -1,0 +1,108 @@
+% Tailored for CesiumAstro Summer 2027 Embedded Software Engineering Internship
+% Facts only from cv.md. EcoCAR dates are the Jan 2026--June 2026 version.
+% Aside AI is the hackathon project, not the co-founder job framing.
+% GPA is not in the source resumes. Do not add one.
+\documentclass[letterpaper,10pt]{article}
+\usepackage[letterpaper, left=0.5in, right=0.5in, top=0.35in, bottom=0.35in]{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\scshape\raggedright\large\bfseries}{}{0em}{}[\color{black}\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+\newcommand{\resumeItem}[1]{\item\small #1}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\normalsize #1} & \normalsize #2 \\
+      \textit{\small #3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-3pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet, leftmargin=0.18in, itemsep=1pt, parsep=0pt, topsep=1.5pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+\begin{document}
+\begin{center}
+  \textbf{\huge \scshape Sukhman Cheema} \\ \vspace{4pt}
+  \small Davis, CA 95616 $|$ (916) 896-9399 $|$ \textbf{U.S. Citizen} \\ \vspace{1pt}
+  \href{mailto:cheemasukh966@gmail.com}{\underline{cheemasukh966@gmail.com}} $|$
+  \href{https://linkedin.com/in/cheema-s/}{\underline{linkedin.com/in/cheema-s}} $|$
+  \href{https://github.com/Cheemasukh962}{\underline{github.com/Cheemasukh962}}
+\end{center}
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Davis}{Davis, CA}
+      {B.S. Electrical \& Computer Engineering, GPA 3.5}{Expected June 2028}
+      \resumeItemListStart
+        \resumeItem{\textbf{Relevant Coursework}: Embedded Systems, Operating Systems, Digital Systems, Computer Architecture, Circuit Analysis II, Data Structures \& Algorithms}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Embedded Software Engineer, Navigation Team}{Jan. 2026 -- June 2026}
+      {UC Davis EcoCAR (DOE EcoCAR EV Challenge)}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Engineered driver-attention monitoring firmware in \textbf{C++} for an automotive-grade MCU, implementing state-machine debouncing and thresholding so steering-lock intervention stopped false-triggering on routine head movement.}
+        \resumeItem{Wrote \textbf{C++ unit tests} for the threshold logic and revalidated across 5 on-track sessions, cutting on-track errors by \textbf{25\%}.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {IEEE Project Lead}{Aug. 2026 -- Present}
+      {IEEE at UC Davis -- Vision-Guided Rover}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Led a 6-person team building a vision-guided rover with a 3D-printed arm, programming closed-loop \textbf{PID motor control} in \textbf{C/C++} on Arduino by fusing IMU, encoder, and ultrasonic sensors over \textbf{UART and I2C}.}
+        \resumeItem{Ran onboard object detection with no network link by fine-tuning a \textbf{YOLO} model and compiling it for a 13-TOPS Hailo accelerator on a Raspberry Pi 5.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {BFTV IT Student Assistant}{Nov. 2025 -- Present}
+      {University of California, Davis (BFTV Cluster)}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Deployed and maintained Linux and Windows lab workstations, configuring BIOS/firmware, network cabling, and RAM/SSD.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Aside AI -- AI Wearable}{Berkeley AI Hackathon}
+      {1st Place, Deepgram Track}{\href{https://github.com/Da0t/AsideAI}{GitHub}}
+      \resumeItemListStart
+        \resumeItem{Built a Raspberry Pi camera node on \textbf{QNX} that streamed frames to a cloud vision model and returned spoken scene descriptions in 1--2 seconds.}
+        \resumeItem{Added on-device \textbf{OpenCV} motion detection that skips unchanged frames, cutting redundant cloud vision calls by \textbf{40\%}.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Fan Safe -- Closed-Loop Controller}{Personal Project}
+      {C++, ESP32, FreeRTOS, I2C}{}
+      \resumeItemListStart
+        \resumeItem{Programmed \textbf{C++} on an ESP32 with hardware timers and \textbf{FreeRTOS} tasks to drive PWM fan control from live sensor feedback.}
+        \resumeItem{Read a digital temperature sensor over \textbf{I2C}, including bus recovery, and checked the control loop in Wokwi before bring-up.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Circuit Labs}{UC Davis}
+      {Oscilloscopes, LTspice, FPGA}{}
+      \resumeItemListStart
+        \resumeItem{Debugged breadboarded filters with oscilloscopes, multimeters, and function generators, and compared measurements with \textbf{LTspice}.}
+        \resumeItem{Programmed and debugged digital logic on \textbf{FPGA} boards using Cadence for schematic capture, layout simulation, and timing.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\section{Technical Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}, itemsep=1pt, topsep=2pt]
+    \small
+    \item \textbf{Embedded}: C, C++, QNX, FreeRTOS, Arduino, ESP32, Raspberry Pi, state machines, PID, UART, I2C, SPI, PWM
+    \item \textbf{Tools}: Git/GitHub, unit testing, pytest, oscilloscopes, multimeters, function generators, LTspice, OpenCV
+  \end{itemize}
+\end{document}

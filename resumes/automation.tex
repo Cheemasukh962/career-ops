@@ -1,0 +1,150 @@
+%-------------------------
+% Resume in LaTeX -- Sukhman Cheema
+% Category resume -- generated from one shared fact base
+%------------------------
+\documentclass[letterpaper,10pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.4in}
+\addtolength{\topmargin}{-0.85in}
+\addtolength{\textheight}{1.75in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-2pt}\scshape\raggedright\large\bfseries}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+
+% ATS: embed a ToUnicode map so text extracts cleanly from the PDF
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\newcommand{\resumeItem}[1]{\item\small\baselineskip=11pt #1 \vspace{-1pt}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{5pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\normalsize #1} & \normalsize #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{5pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \normalsize #1 & \normalsize #2 \\
+    \end{tabular*}\vspace{-4pt}
+}
+% One-line italic summary that sits under a project heading
+\newcommand{\resumeProjectDesc}[1]{\vspace{6pt}\newline\begin{tabular*}{0.97\textwidth}{l}\small\textit{#1}\end{tabular*}\vspace{-3pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet, itemsep=3.2pt, parsep=0pt, topsep=3.5pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\huge \scshape Sukhman Cheema} \\ \vspace{6pt}
+  \small Davis, CA 95616 $|$ U.S. Citizen \\ \vspace{3pt}
+  \small (916) 896-9399 $|$
+  \href{mailto:cheemasukh966@gmail.com}{\underline{cheemasukh966@gmail.com}} $|$
+  \href{https://linkedin.com/in/cheema-s/}{\underline{linkedin.com/in/cheema-s}} $|$
+  \href{https://github.com/Cheemasukh962}{\underline{github.com/Cheemasukh962}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Davis}{Davis, CA}
+      {B.S. Electrical \& Computer Engineering}{Expected June 2028}
+      \resumeItemListStart
+        \resumeItem{\textbf{Relevant Coursework}: Embedded Systems, Operating Systems, Digital Systems, Circuit Analysis II, Data Structures \& Algorithms, Software Engineering, Computer Vision}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+      {BFTV IT Student Assistant}{Nov. 2025 -- Present}
+      {University of California, Davis (BFTV Cluster)}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Deployed and maintained \textbf{Linux and Windows} lab workstations across campus facilities, configuring \textbf{BIOS/firmware}, \textbf{network cabling}, and hardware components (RAM/SSD).}
+        \resumeItem{Built an equipment lifecycle tracking system for \textbf{750+ capital assets (\$2.5M)}, designing a normalized \textbf{SQL} schema with foreign-key constraints, serving JSON through a \textbf{PHP API}, and building the Bootstrap front end.}
+           \resumeItem{Engineered a \textbf{Python} and \textbf{SQL ETL pipeline} to extract, validate, and ingest \textbf{35 legacy data tables} into a centralized relational database, with error handling that \textbf{eliminated manual data entry}.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {IEEE Project Lead}{August 2026 -- Present}
+      {IEEE at UC Davis -- Vision-Guided Rover}{Davis, CA}
+      \resumeItemListStart
+ \resumeItem{Led a \textbf{6-person engineering team} building a vision-guided rover with a \textbf{3D-printed arm}, programming closed-loop \textbf{PID motor control} in \textbf{C/C++} on \textbf{Arduino} by fusing \textbf{IMU, encoder, and ultrasonic} sensors over \textbf{UART and I2C}.}
+\resumeItem{Achieved standalone on-rover object detection with zero network dependency by fine-tuning a custom \textbf{YOLO} model and compiling it for a \textbf{13-TOPS Hailo AI accelerator} on a \textbf{Raspberry Pi 5}.}
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Embedded Software Engineer, Navigation Team}{Jan. 2026 -- June 2026}
+      {UC Davis EcoCAR (DOE EcoCAR EV Challenge)}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Engineered \textbf{driver-attention monitoring firmware} in \textbf{C++} for an \textbf{automotive-grade MCU}, implementing \textbf{state-machine} debouncing and thresholding so steering-lock intervention stopped false-triggering on routine head movement.}
+        \resumeItem{Wrote \textbf{C++ unit tests} for the threshold logic and revalidated across 5 on-track sessions, \textbf{cutting on-track errors by 25\%}.}
+      \resumeItemListEnd
+
+
+
+  
+
+  \resumeSubHeadingListEnd
+%-----------PROJECTS-----------
+\section{Projects \& Labs}
+  \resumeSubHeadingListStart
+\resumeProjectHeading
+      {\textbf{Hardware \& Circuit Design Labs } $|$ \small\emph{Oscilloscopes, Multimeters, Function Generators, LTspice}}{UC Davis}
+      \resumeItemListStart
+\resumeItem{Programmed and debugged digital logic designs on \textbf{FPGA} development boards, utilizing \textbf{Cadence} EDA tools for schematic capture, layout simulation, and timing verification.}        \resumeItem{Built and debugged analog/passive filter circuits on breadboards, utilizing \textbf{oscilloscopes}, \textbf{multimeters}, and \textbf{function generators} to isolate wiring faults, and signal noise.}
+
+        
+        \resumeItem{Compared bench measurements against \textbf{LTspice} simulations to check component tolerances and frequency response.}
+      \resumeItemListEnd
+      
+    \resumeProjectHeading
+      {\textbf{Aside AI -- AI Wearable} $|$ \small\emph{\textbf{1st Place (Deepgram Track)}, Berkeley AI Hackathon $|$ Python, Redis, OpenCV, QNX}}{\href{https://github.com/Da0t/AsideAI}{\underline{\textit{GitHub}}}}
+      \resumeItemListStart
+        \resumeItem{Built the wearable's \textbf{Raspberry Pi} camera node running \textbf{QNX (RTOS)}, capturing frames and streaming them to a cloud vision model for spoken scene descriptions in \textbf{1--2s} end to end.}
+        \resumeItem{Added on-device \textbf{OpenCV} motion detection that skips unchanged frames, \textbf{cutting redundant cloud vision calls (API tokens) by 40\%}.}
+      \resumeItemListEnd
+
+
+
+    \resumeProjectHeading
+      {\textbf{dAdvisor} $|$ \small\emph{\textbf{Winner: Systems Integration \& AI}, ProdCon UC Davis $|$ TypeScript, React, Figma, Vercel}}{\href{https://github.com/Pocket-sys32/dAdvisor}{\underline{\textit{GitHub}}}}
+      \resumeItemListStart
+             \resumeItem{Architected a \textbf{Retrieval-Augmented Generation (RAG)} chatbot indexing \textbf{25,000+ academic transcripts} and degree requirements in \textbf{ChromaDB} for an advising platform targeting \textbf{30k+ UC Davis students}.}
+        \resumeItem{Led \textbf{TypeScript/React} frontend development and integration with the containerized Python backend, validating features through \textbf{25+ student interviews}.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+%-----------SKILLS-----------
+\section{Technical Skills}
+  \resumeSubHeadingListStart
+    \vspace{4pt}\small{\item{\baselineskip=13pt
+      \textbf{Languages}{: C, C++, Python, SQL, JavaScript/TypeScript, Bash} \\
+      \textbf{Embedded \& Controls}{: QNX (RTOS), FreeRTOS, Arduino, ESP32, Raspberry Pi, I2C, UART, SPI, PWM, Interrupts, PID Motor Control, State Machines} \\
+      \textbf{Testing \& Process}{: Unit Testing, pytest, Git/GitHub, GitHub Actions (CI), Docker, Jira (Agile sprints)} \\
+      \textbf{Lab \& Vision}{: Oscilloscopes, Multimeters, Function Generators, LTspice, OpenCV, YOLO, TensorFlow, PyTorch }
+    }}
+  \resumeSubHeadingListEnd
+
+\end{document}

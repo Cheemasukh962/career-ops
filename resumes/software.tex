@@ -1,0 +1,152 @@
+%-------------------------
+% Resume in LaTeX -- Sukhman Cheema
+% Version : HYBRID (software-forward) -- software / full-stack / AI booths
+% Use for : SWE, backend, full-stack, data, AI/ML roles (still shows embedded side)
+%------------------------
+\documentclass[letterpaper,10pt]{article}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.4in}
+\addtolength{\topmargin}{-0.85in}
+\addtolength{\textheight}{1.75in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+\titleformat{\section}{\vspace{-2pt}\scshape\raggedright\large\bfseries}{}{0em}{}[\color{black}\titlerule \vspace{-3pt}]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+% ATS: embed a ToUnicode map so text extracts cleanly from the PDF
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\newcommand{\resumeItem}[1]{\item\small\baselineskip=10.6pt #1 \vspace{-1pt}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{3pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\normalsize #1} & \normalsize #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-4pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \vspace{3pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \normalsize #1 & \normalsize #2 \\
+    \end{tabular*}\vspace{-4pt}
+}
+% One-line italic summary that sits under a project heading
+\newcommand{\resumeProjectDesc}[1]{\vspace{6pt}\newline\begin{tabular*}{0.97\textwidth}{l}\small\textit{#1}\end{tabular*}\vspace{-3pt}}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet, itemsep=2.6pt, parsep=0pt, topsep=2.5pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\huge \scshape Sukhman Cheema} \\ \vspace{4pt}
+  \small Davis, CA 95616 $|$ U.S. Citizen \\ \vspace{2pt}
+  \small (916) 896-9399 $|$
+  \href{mailto:cheemasukh966@gmail.com}{\underline{cheemasukh966@gmail.com}} $|$
+  \href{https://linkedin.com/in/cheema-s/}{\underline{linkedin.com/in/cheema-s}} $|$
+  \href{https://github.com/Cheemasukh962}{\underline{github.com/Cheemasukh962}}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Davis}{Davis, CA}
+      {B.S. Electrical \& Computer Engineering}{Expected June 2028}
+      \resumeItemListStart
+        \resumeItem{\textbf{Relevant Coursework}: Data Structures \& Algorithms, Operating Systems, Software Engineering, Database Systems, Embedded Systems, Computer Vision, Circuit Analysis II}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {BFTV IT Student Assistant}{Nov. 2025 -- Present}
+      {University of California, Davis (BFTV Cluster)}{Davis, CA}
+      \resumeItemListStart
+
+\resumeItem{ Deployed, and maintained \textbf{Linux and Windows lab }workstations across campus facilities, configuring \textbf{BIOS/firmware}, \textbf{network cabling}, and \textbf{hardware components(Ram/SSD)}.}
+        \resumeItem{Built an equipment lifecycle tracking system for \textbf{750+ capital assets (\$2.5M)}, replacing manual spreadsheet audits and \textbf{cutting audit time by 85\%} (3 months to 2 weeks); built on a normalized \textbf{SQL} schema, \textbf{PHP} API, and \textbf{Bootstrap} UI.}
+        \resumeItem{Engineered a \textbf{Python} and \textbf{SQL ETL pipeline} to extract, validate, and ingest \textbf{35 legacy data tables} into a centralized relational database, with error handling that \textbf{eliminated manual data entry}.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Engineer Lead}{Dec. 2025 -- Present}
+      {\#INCLUDE (Campus Web Club)}{Davis, CA}
+      \resumeItemListStart
+\resumeItem{Built the event registration system for a \textbf{React/Next.js} platform serving \textbf{200+ active users}, wiring the signup form to a \textbf{FastAPI} service that validated and persisted attendees in \textbf{MySQL} and triggered a confirmation email through \textbf{Resend}.}
+\resumeItem{Led \textbf{agile sprint development} and roadmap planning, teaching \textbf{React} and \textbf{HTML/CSS/JavaScript} fundamentals to a 10-student cohort before authoring \textbf{PRDs} and managing backlog execution to ship a \textbf{production application} for a campus club.}
+\resumeItem{Wrote \textbf{10+ pytest} unit and integration tests for the registration service, covering email validation, duplicate-signup handling, and \textbf{MySQL persistence}, that run on every pull request via \textbf{GitHub Actions}.}
+        
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Embedded Software Engineer, Navigation Team}{Jan. 2026 -- June 2026}
+      {UC Davis EcoCAR (DOE EcoCAR EV Challenge)}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Engineered \textbf{driver-attention monitoring firmware} in \textbf{C++} for an \textbf{automotive-grade MCU}, implementing \textbf{state-machine} debouncing and thresholding so steering-lock intervention stopped false-triggering on routine head movement.}
+        \resumeItem{Wrote \textbf{C++ unit tests} for the threshold logic and revalidated across 5 on-track sessions, \textbf{cutting on-track errors by 25\%}.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects }
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {\textbf{Aside AI -- AI Wearable} $|$ \small\emph{\textbf{1st Place (Deepgram Track)}, Berkeley AI Hackathon $|$ Python, Redis, OpenCV, QNX}}{\href{https://github.com/Da0t/AsideAI}{\underline{\textit{GitHub}}}}
+      \resumeItemListStart
+        \resumeItem{Built an end-to-end \textbf{edge-to-cloud} narration pipeline connecting a \textbf{Raspberry Pi/QNX} camera node to \textbf{Claude Vision}, streaming low-latency multimodal scene descriptions to a mobile client in \textbf{1--2s}.}
+        \resumeItem{Engineered an in-memory \textbf{Redis} contextual caching layer integrated with \textbf{OpenCV} motion detection, \textbf{cutting redundant API token consumption by 40\%} while preserving conversation history.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{Yoga Pose Corrector} $|$ \small\emph{Machine Learning Club $|$ Python, MediaPipe, TypeScript, TensorFlow, scikit-learn, Pandas}}{\href{https://github.com/Cheemasukh962/yoga_pose_corrector}{\underline{\textit{GitHub}}}}
+      \resumeProjectDesc{Real-time computer-vision app that helps people learn and check their yoga poses.}
+      \resumeItemListStart
+        \resumeItem{Trained a deep dense \textbf{neural network (MLP)} in \textbf{TensorFlow} to classify \textbf{40 distinct yoga poses}, reaching \textbf{82.37\% peak accuracy} on 132 skeletal landmark features.}
+        \resumeItem{Built a \textbf{real-time pose-classification pipeline} on \textbf{Google MediaPipe}, extracting \textbf{33 3D skeletal landmarks per frame} to drive live form correction.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {\textbf{dAdvisor} $|$ \small\emph{\textbf{Winner: Systems Integration \& AI}, ProdCon UC Davis $|$ TypeScript, React, Figma, Vercel}}{\href{https://github.com/Pocket-sys32/dAdvisor}{\underline{\textit{GitHub}}}}
+      \resumeItemListStart
+             \resumeItem{Architected a \textbf{Retrieval-Augmented Generation (RAG)} chatbot indexing \textbf{25,000+ academic transcripts} and degree requirements in \textbf{ChromaDB} for an advising platform targeting \textbf{30k+ UC Davis students}.}
+        \resumeItem{Led \textbf{TypeScript/React} frontend development and integration with the containerized Python backend, validating features through \textbf{25+ student interviews}.}
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+  \resumeSubHeadingListStart
+    \vspace{3pt}\small{\item{\baselineskip=12pt
+      \textbf{Languages}{: Python, C++, C, SQL, JavaScript/TypeScript, Java, Bash, HTML/CSS} \\
+      \textbf{Frameworks \& Data}{: FastAPI, React, Next.js, Node.js, PyTorch, TensorFlow, scikit-learn, MediaPipe, OpenCV, Pandas, MySQL, PostgreSQL, SQLite, Redis, ChromaDB} \\
+      \textbf{Embedded \& Hardware}{: QNX (RTOS), FreeRTOS, ESP32, Raspberry Pi, I2C, UART, SPI, PWM, Oscilloscopes, LTspice} \\
+      \textbf{Tools}{: Git/GitHub, GitHub Actions (CI), pytest, Docker, AWS (EC2, S3), Linux, Jira, ServiceNow}
+    }}
+  \resumeSubHeadingListEnd
+
+\end{document}

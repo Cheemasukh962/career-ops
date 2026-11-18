@@ -1,0 +1,178 @@
+%-------------------------
+% Resume in LaTeX
+% Author : Sukhman Cheema
+% Target : AeroVironment -- Embedded Software Engineering Intern (Simi Valley, CA)
+% Focus  : Embedded C++ / RTOS / Hardware Bring-Up / Serial Protocols
+%------------------------
+\documentclass[letterpaper,10pt]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\IfFileExists{fontawesome5.sty}{\usepackage{fontawesome5}}{%
+  \newcommand{\faPhone}{}\newcommand{\faEnvelope}{}%
+  \newcommand{\faLinkedin}{}\newcommand{\faGithub}{}}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.62in}
+\addtolength{\textheight}{1.2in}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-8pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\footnotesize{
+    {#1 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-6pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-6pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Sukhman Cheema} \\ \vspace{2pt}
+    Davis, CA 95616 ~$|$~ \textbf{U.S. Citizen} \\ \vspace{2pt}
+    \small \raisebox{-0.1\height}\faPhone\ 916-896-9399 ~ \href{mailto:cheemasukh966@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ \underline{cheemasukh966@gmail.com}} ~
+    \href{https://www.linkedin.com/in/cheema-s/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/cheema-s/}} ~
+    \href{https://github.com/Cheemasukh962}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/Cheemasukh962}}
+    \vspace{-8pt}
+\end{center}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Davis}{Expected June 2028}
+      {Bachelor of Science in Electrical and Computer Engineering {\normalfont  \textbf{}}}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{\textbf{Relevant Coursework:} Embedded Systems, Operating Systems, Computer Architecture, Digital Systems II, Data Structures \& Algorithms, Circuit Analysis II}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-4pt}
+
+
+%-----------EXPERIENCE-----------
+\section{Engineering Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Hardware Systems \& IT Intern}{Nov. 2025 -- Present}
+      {UC Davis BFTV Cluster}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Executed component-level hardware diagnostics, teardowns, and board-level repairs across 50+ enterprise Linux, Windows, and macOS systems, isolating physical bus and memory faults.}
+        \resumeItem{Benchmarked NVMe/PCIe SSD and RAM throughput against timing specifications using low-level I/O profiling tools, isolating degradation trends to cut system downtime by 30\%.}
+        \resumeItem{Developed Bash and Python automation scripts executed over SSH to poll hardware telemetry and standardize root-cause failure analysis across 40+ hardware RMA evaluations.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Embedded Systems Engineer \& Co-Founder}{May 2026 -- Present}
+      {Aside AI ( Hardware Wearable)}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Architected a real-time embedded capture runtime on a Raspberry Pi 5 running QNX RTOS, configuring POSIX thread scheduling and camera sensor ISRs to keep system latency under 1.5 seconds.}
+        \resumeItem{Mitigated processor thermal throttling and power draw by developing an OpenCV-based motion gating filter, cutting redundant inference compute cycles by 40\%.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Embedded Software Engineer, Navigation Team}{Jan. 2026 -- Present}
+      {UC Davis EcoCAR (DOE EcoCAR EV Challenge)}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Engineered driver-attention monitoring firmware in C++ deployed to an automotive-grade MCU, processing continuous eye-gaze tracking vectors to evaluate driver alertness.}
+        \resumeItem{Implemented state-machine debouncing and thresholding logic to govern steering-lock actuation, eliminating false-positive triggers while preserving fail-safe vehicle intervention.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Robotics Software Lead \& Treasurer}{Dec. 2024 -- May 2025}
+      {American River Engineering Club}{Sacramento, CA}
+      \resumeItemListStart
+        \resumeItem{Led a 6-engineer team writing embedded C/C++ firmware for 10 semi-autonomous mobile robots, programming closed-loop PID motor velocity control and PWM timers.}
+        \resumeItem{Interfaced ultrasonic distance sensors, IMUs, and optical encoders using I2C/UART hardware interrupts, resolving signal noise.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+\vspace{-2pt}
+
+%-----------PROJECTS-----------
+\section{Technical Projects \& Laboratory Experience}
+    \resumeSubHeadingListStart
+
+      \resumeProjectHeading
+          {\textbf{Circuit Characterization \& Hardware Debug Labs (EEC 111)} $|$ \emph{Oscilloscopes, Function Generators, LTspice}}{UC Davis}
+          \resumeItemListStart
+            \resumeItem{Probed active and passive circuits with digital storage oscilloscopes to locate and resolve signal integrity degradation, high-frequency noise, and wiring faults on physical breadboards.}
+            \resumeItem{Reconciled probe measurements against LTspice theoretical simulations to validate component tolerances, frequency response, and transient stability under load.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Fan Safe -- Closed-Loop Environmental Controller} $|$ \emph{C++, ESP32, FreeRTOS, I2C, Wokwi}}{Personal Project}
+          \resumeItemListStart
+            \resumeItem{Programmed bare-metal C++ firmware on an ESP32 microcontroller, utilizing hardware timers and FreeRTOS tasks to drive dynamic PWM fan actuation from live sensor feedback.}
+            \resumeItem{Interfaced digital thermal sensors over an I2C bus interface, implementing bus recovery sequences and validating control loop state logic in Wokwi simulation prior to physical bring-up.}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+\vspace{-12pt}
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C, Embedded C++, Python, Bash/Shell, MATLAB, Assembly} \\
+     \textbf{Embedded \& Real-Time Systems}{: QNX (RTOS), FreeRTOS, Embedded Linux, Interrupt Service Routines (ISRs), POSIX Threads, Memory Management, Hardware Timers/PWM} \\
+     \textbf{Hardware Architectures \& Busses}{: ARM Cortex, Raspberry Pi 5, ESP32, Automotive Microcontrollers, UART, CAN Bus, SPI, I2C, GPIO, ADC} \\
+     \textbf{Bench Testing \& Lab Instruments}{: Digital Storage Oscilloscopes, Logic Analyzers, Multimeters, Function Generators, Signal Integrity Analysis, Hardware Bring-Up} \\
+     \textbf{Developer Tools \& Methodologies}{: Git/GitHub, CMake, GDB, Linux CLI, Wokwi, LTspice, Hardware-in-the-Loop (HIL) Testing, Unit Testing}
+    }}
+ \end{itemize}
+\vspace{-8pt}
+
+\end{document}

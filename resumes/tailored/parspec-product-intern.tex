@@ -1,0 +1,156 @@
+%-------------------------
+% Resume in LaTeX -- Sukhman Cheema
+% Version : TECHNICAL PRODUCT MANAGEMENT (2-Bullet XYZ Format, Zero AI Fluff)
+%------------------------
+\documentclass[letterpaper,10pt]{article}
+\usepackage[letterpaper, left=0.5in, right=0.5in, top=0.35in, bottom=0.35in]{geometry}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%----------SPACING KNOBS (tweak these to tighten/loosen) ----------
+\newcommand{\bulletLeading}{10pt}  % line spacing inside bullets
+\newcommand{\bulletGap}{1pt}       % gap between bullets
+\newcommand{\entryGap}{3pt}          % gap before each job / project
+%-------------------------------------------------------------------
+
+\titleformat{\section}{\scshape\raggedright\large\bfseries}{}{0em}{}[\color{black}\titlerule]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+\ifdefined\pdfgentounicode
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\newcommand{\resumeItem}[1]{\item\small\baselineskip=\bulletLeading #1}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{\entryGap}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\normalsize #1} & \normalsize #2 \\[1pt]
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-3pt}
+}
+% Project heading (one line): name | award ............ tech stack | link
+\newcommand{\resumeProjectHeading}[4]{
+  \vspace{\entryGap}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\normalsize #1} \footnotesize$|$ \textit{#3} & \textit{\footnotesize #4} \footnotesize$|$ #2 \\
+    \end{tabular*}\vspace{-3pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}, itemsep=0pt, topsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\textbullet, leftmargin=0.18in, itemsep=\bulletGap, parsep=0pt, topsep=1.5pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+  \textbf{\huge \scshape Sukhman Cheema} \\ \vspace{5pt}
+  \small Davis, CA 95616 $|$ (916) 896-9399 $|$ \textbf{U.S. Citizen} \\ \vspace{1pt}
+  \href{mailto:cheemasukh966@gmail.com}{\underline{cheemasukh966@gmail.com}} $|$
+  \href{https://linkedin.com/in/cheema-s/}{\underline{linkedin.com/in/cheema-s}} $|$
+  \href{https://github.com/Cheemasukh962}{\underline{github.com/Cheemasukh962}}
+\end{center}
+\vspace{-6pt}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of California, Davis}{Davis, CA}
+      {B.S. in Electrical \& Computer Engineering, GPA 3.5}{Expected June 2028}
+      \resumeItemListStart
+        \resumeItem{\textbf{Relevant Coursework}: Database Systems, Data Structures \& Algorithms, Software Engineering, Human-Computer Interaction (HCI), Computer Vision, Operating Systems, Statistics, Accounting}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {BFTV IT Student Assistant}{Nov. 2025 -- Present}
+      {University of California, Davis (BFTV Cluster)}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Built an equipment lifecycle tracking system for \textbf{750+ capital assets (\$2.5M)}, replacing manual spreadsheet audits and \textbf{cutting audit time by 85\%} (3 months to 2 weeks); built on a normalized \textbf{SQL} schema, \textbf{PHP} API, and \textbf{Bootstrap} UI.}
+        \resumeItem{Engineered a \textbf{Python} and \textbf{SQL ETL pipeline} to extract, validate, and ingest \textbf{35 legacy data tables} into a centralized relational database, with error handling that \textbf{eliminated manual data entry}.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Product Growth \& Campus Lead}{June 2026 -- Present}
+      {Base44}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Drove AI platform adoption across \textbf{150+ students} and \textbf{5 student organizations} by segmenting engineering, data science, and business user groups and running \textbf{3 hands-on product showcases}.}
+        \resumeItem{Reduced onboarding friction for new student builders by gathering live user feedback during campus workshops and sending prioritized product recommendations to the core engineering team.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Technology Product Consultant}{Apr. 2026 -- Aug. 2026}
+      {Develop for Good (Client: Family Hui Non-Profit)}{Remote}
+      \resumeItemListStart
+        \resumeItem{Cut \textbf{6 weeks of engineering build time} and eliminated \textbf{\$400/year} in recurring costs by leading client discovery with non-profit executives and writing a formal \textbf{ROI business case} comparing CMS platforms against custom code.}
+        \resumeItem{Lowered staff support requests by building reusable web components and training non-technical administrators.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Product \& Software Engineering Lead}{Dec. 2025 -- Present}
+      {\#INCLUDE (Campus Web Organization)}{Davis, CA}
+      \resumeItemListStart
+        \resumeItem{Fixed a \textbf{25\% signup conversion drop-off} across \textbf{200+ monthly active users} by analyzing behavioral funnels in \textbf{PostHog} and simplifying the event registration flow.}
+        \resumeItem{Shipped a production event platform with CI testing by writing \textbf{PRDs} and running \textbf{Jira} sprints for \textbf{10+ engineers and designers}.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects \& Case Studies}
+  \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+      {dAdvisor -- AI Academic Planning Platform}{\href{https://github.com/Pocket-sys32/dAdvisor}{\underline{\textit{GitHub}}}}
+      {\textbf{1st Place}, ProdCon}{TypeScript, React, ChromaDB, Figma}
+      \resumeItemListStart
+        \resumeItem{Won \textbf{1st Place in Systems Integration \& AI} for a platform targeting \textbf{30,000+ students} by running \textbf{25+ student discovery interviews} and pitching a business case, competitor matrix, and \textbf{Figma} prototype to industry judges.}
+        \resumeItem{Enabled fast degree-requirement search across \textbf{25,000+ academic transcripts} by building a \textbf{Retrieval-Augmented Generation (RAG)} chatbot using \textbf{ChromaDB}, \textbf{Python}, and \textbf{React/TypeScript}.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {Aside AI -- Computer Vision Wearable}{\href{https://github.com/Da0t/AsideAI}{\underline{\textit{GitHub}}}}
+      {\textbf{1st Place}, UC Berkeley AI Hackathon}{Python, OpenCV, Redis, QNX}
+      \resumeItemListStart
+        \resumeItem{Delivered spoken scene descriptions in \textbf{1--2 seconds} (winning \textbf{1st Place in the Deepgram Track}) by building an edge-to-cloud wearable POC connecting a \textbf{Raspberry Pi/QNX} camera node to \textbf{Claude Vision} and \textbf{Deepgram}.}
+        \resumeItem{Cut redundant cloud LLM API token usage by \textbf{40\%} by adding on-device \textbf{OpenCV} motion detection and an in-memory \textbf{Redis} cache that skips unchanged video frames.}
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+      {VitaPal -- Digital Health Product Strategy}{\href{https://github.com/Cheemasukh962}{\underline{\textit{GitHub}}}}
+      {Competitive Research \& UX Discovery}{TypeScript, Figma}
+      \resumeItemListStart
+        \resumeItem{Identified product gaps for a low-effort micronutrient tracker by benchmarking \textbf{3 competitors (MyFitnessPal, Cronometer, Noom)} on onboarding steps, logging speed, and user retention.}
+        \resumeItem{Redesigned the daily check-in flow to cut logging friction through \textbf{30 user interviews} and iterative \textbf{Figma} prototypes.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Product \& Technical Skills}
+  \begin{itemize}[leftmargin=0.15in, label={}, topsep=2pt, itemsep=2pt, parsep=0pt]
+    \footnotesize\baselineskip=10.4pt
+    \item \textbf{Product Management \& UX}: PRD Authoring, Epics \& User Stories, User Research \& Usability Testing, KPI \& HEART Metrics, Funnel Analytics (PostHog, Google Analytics), Competitive Analysis (SWOT), Roadmap Prioritization (P0--P2), Agile/Scrum, Figma
+    \item \textbf{Emerging Tech, AI \& Data}: Rapid POC Prototyping, LLMs \& RAG (ChromaDB), Computer Vision (OpenCV, MediaPipe), Multimodal AI (Claude Vision, Deepgram), Low-Code AI Tools (Base44), SQL (PostgreSQL, MySQL), ETL Pipelines, Power BI, Excel (ROI Modeling)
+    \item \textbf{Engineering \& Cloud Tools}: Python, TypeScript/JavaScript, C++, FastAPI, React, Next.js, REST APIs, Redis, AWS (EC2, S3), Docker, GitHub Actions (CI/CD), Jira, Confluence, ServiceNow
+  \end{itemize}
+
+\end{document}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Sukhman Cheema — Embedded</title>
+<style>
+  @page { size: letter; margin: 0.45in 0.5in; }
+  body { font-family: "Times New Roman", Times, serif; font-size: 10.5pt; color: #111; line-height: 1.28; }
+  h1 { font-size: 18pt; text-align: center; letter-spacing: 1px; margin: 0; }
+  .contact { text-align: center; font-size: 10pt; margin: 4px 0 8px; }
+  h2 { font-size: 11.5pt; text-transform: uppercase; border-bottom: 1px solid #111; margin: 10px 0 4px; letter-spacing: 0.5px; }
+  .row { display: flex; justify-content: space-between; gap: 12px; }
+  .role { font-weight: bold; }
+  .meta { font-style: italic; }
+  ul { margin: 2px 0 6px 18px; padding: 0; }
+  li { margin: 1px 0; }
+</style>
+</head>
+<body>
+<h1>SUKHMAN CHEEMA</h1>
+<p class="contact">Davis, CA 95616 | (916) 896-9399 | U.S. Citizen<br>
+cheemasukh966@gmail.com | linkedin.com/in/cheema-s | github.com/Cheemasukh962</p>
+
+<h2>Education</h2>
+<div class="row"><span class="role">University of California, Davis</span><span>Davis, CA</span></div>
+<div class="row"><span class="meta">B.S. Electrical &amp; Computer Engineering, GPA 3.5</span><span class="meta">Expected June 2028</span></div>
+<ul><li><b>Relevant Coursework:</b> Embedded Systems, Operating Systems, Digital Systems, Computer Architecture, Circuit Analysis II, Data Structures &amp; Algorithms</li></ul>
+
+<h2>Experience</h2>
+<div class="row"><span class="role">Embedded Software Engineer, Navigation Team</span><span>Jan. 2026 – June 2026</span></div>
+<div class="row"><span class="meta">UC Davis EcoCAR (DOE EcoCAR EV Challenge) · Davis, CA</span><span></span></div>
+<ul>
+<li>Engineered driver-attention monitoring firmware in C++ for an automotive-grade MCU, using state-machine debouncing and thresholding so steering-lock intervention stopped false-triggering on routine head movement.</li>
+<li>Wrote C++ unit tests for the threshold logic and revalidated them across 5 on-track sessions, cutting on-track errors by 25%.</li>
+</ul>
+<div class="row"><span class="role">IEEE Project Lead, Vision-Guided Rover</span><span>Aug. 2026 – Present</span></div>
+<div class="row"><span class="meta">IEEE at UC Davis · Davis, CA</span><span></span></div>
+<ul>
+<li>Led a 6-person team building a vision-guided rover with a 3D-printed arm, programming closed-loop PID motor control in C/C++ on Arduino from IMU, encoder, and ultrasonic sensors over UART and I2C.</li>
+<li>Ran onboard object detection with no network link by fine-tuning a YOLO model and compiling it for a 13-TOPS Hailo accelerator on a Raspberry Pi 5.</li>
+</ul>
+<div class="row"><span class="role">BFTV IT Student Assistant</span><span>Nov. 2025 – Present</span></div>
+<div class="row"><span class="meta">University of California, Davis · Davis, CA</span><span></span></div>
+<ul>
+<li>Deployed and maintained Linux and Windows lab workstations, configuring BIOS/firmware, network cabling, and RAM/SSD.</li>
+</ul>
+
+<h2>Projects</h2>
+<div class="row"><span class="role">Aside AI — AI Wearable</span><span>1st Place, Deepgram Track</span></div>
+<ul>
+<li>Built a Raspberry Pi camera node on QNX that streamed frames to a cloud vision model and returned spoken scene descriptions in 1–2 seconds.</li>
+<li>Added on-device OpenCV motion detection that skips unchanged frames, cutting redundant cloud vision calls by 40%.</li>
+</ul>
+<div class="row"><span class="role">Fan Safe — Closed-Loop Controller</span><span>C++, ESP32, FreeRTOS</span></div>
+<ul>
+<li>Programmed C++ on an ESP32 with hardware timers and FreeRTOS tasks to drive PWM fan control from an I2C temperature sensor, including bus recovery, and checked the loop in Wokwi before bring-up.</li>
+</ul>
+<div class="row"><span class="role">Circuit Labs, UC Davis</span><span>FPGA, LTspice</span></div>
+<ul>
+<li>Debugged breadboarded filters with oscilloscopes, multimeters, and function generators, and compared measurements with LTspice.</li>
+<li>Programmed digital logic on FPGA boards using Cadence for schematic capture, layout simulation, and timing.</li>
+</ul>
+
+<h2>Technical Skills</h2>
+<ul>
+<li><b>Embedded:</b> C, C++, QNX, FreeRTOS, Arduino, ESP32, Raspberry Pi, state machines, PID, UART, I2C, SPI, PWM</li>
+<li><b>Tools:</b> Git/GitHub, unit testing, oscilloscopes, multimeters, function generators, LTspice, OpenCV</li>
+</ul>
+</body>
+</html>
