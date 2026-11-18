@@ -968,6 +968,7 @@ async function main() {
         url: o.url,
         location: o.location || null,
         postedAt: o.postedAt ? new Date(o.postedAt).toISOString().slice(0, 10) : null,
+        postedAtIso: o.postedAt ? new Date(o.postedAt).toISOString() : null,
         dateStatus: o.dateStatus || (o.postedAt ? 'dated' : 'unknown'),
         blacklisted: Boolean(o.blacklisted),
         note: o.note || null,

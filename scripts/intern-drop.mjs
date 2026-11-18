@@ -16,7 +16,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { spawn } from "node:child_process";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { extractJobKey } from "./applied-jobs.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -158,7 +158,7 @@ function classify(title) {
   return "other";
 }
 
-function keepOffer(o) {
+export function keepOffer(o) {
   const title = o.title || "";
   const company = o.company || "";
   const loc = o.location || "";
